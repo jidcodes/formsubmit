@@ -8,15 +8,24 @@ const Home = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     console.log(name, email, phone, message);
+
+    setName("");
+    setEmail("");
+    setPhone("");
+    setMessage("");
   };
 
   return (
     <div className="grid place-items-center pt-12">
       <h1 className="text-2xl font-medium">CONTACT FORM</h1>
 
-      <form name="contact" method="POST" data-netlify="true" onSubmit="submit">
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        onSubmit={handleSubmit}
+      >
         <div className="my-3">
           <label htmlFor="name">Name</label>
           <input
@@ -62,7 +71,7 @@ const Home = () => {
         </div>
 
         <button
-          onClick={handleSubmit}
+          type="submit"
           className="bg-blue-600 text-white font-medium py-2 w-80 rounded-full mt-6"
         >
           Submit
