@@ -24,6 +24,8 @@ const Home = () => {
         name="contact"
         method="POST"
         data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        action="/success/"
         onSubmit={handleSubmit}
       >
         <div className="my-3">
